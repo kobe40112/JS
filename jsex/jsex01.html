@@ -1,0 +1,25 @@
+<script>
+function mytest(){
+    let year = document.getElementById("year").value;
+    let flag;
+    if(year %4 ==0){
+        if(year %100 == 0){
+            if(year %400 == 0){
+                flag = true;
+            }else{
+                flag = false;
+            }
+        }else{
+            flag=true;
+        }
+    }else{
+        flag = false;
+    }
+    document.getElementById("result").innerHTML = 
+    flag ? '閏年' :'平年' ;
+}
+
+</script>
+<input type="text" id="year">
+<input type="button" value="判斷是否為閏年" onclick="mytest()">
+<span id='result'></span>
