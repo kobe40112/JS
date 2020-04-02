@@ -1,0 +1,43 @@
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    table,
+    td {
+        border: 1px solid black;
+    }
+</style>
+<table>
+    <script>
+        document.write("<table>")
+        let i = 1
+        let k;
+        let str1 = '';
+        let str2 = '';
+        while (i <= 100) {
+            let flag = true;
+            for (let j = 2; j < i; j++) {
+
+                if (i % j == 0) {
+                    flag = false;
+                }
+            }
+            if( i === 1){
+                flag = false;
+            }
+            document.write( (i % 10 === 1)? "<tr>": "");
+            if (flag) {
+                document.write(`<td style = 'background-color:yellow'>${i}`);
+                // document.write("<td bgcolor=yellow'>");
+            }else{
+                document.write(`<td '>${i}`);
+            }
+            document.write(("</td>"));
+            document.write( (i % 10 === 0)? "</tr>": "");
+            i++;
+        }
+        document.write(" </table>")
+    </script>
+</table>

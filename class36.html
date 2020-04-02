@@ -1,0 +1,26 @@
+<script>
+    //
+    let bike = {
+        _speed: 0,//加底線 受保護的屬性
+        //給值
+        set speed(value){
+            console.log("here" +value);
+            if(value >= 0){
+                this._speed = value;
+            }else{
+
+            }
+        },
+        //取值
+        get speed(){   
+            return "speed is"+this._speed; //_有底線:通常
+        }
+    };
+    
+    bike.speed = 1;   //set speed;給值
+    document.write(bike.speed +"<br>"); //get speed //speed is 1;取值
+    bike.speed = -1;   //set speed;給值
+    document.write(bike.speed +"<br>"); //get speed //speed is -1;取值
+    bike.speed = 123;   //set speed;給值
+    document.write(bike.speed +"<br>"); //get speed //speed is 123;取值
+</script>

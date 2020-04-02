@@ -1,0 +1,15 @@
+<script>
+    function changeAlign(){
+        let textalign = document.getElementById("textAlign");//控制下拉式選單
+        let mytext = document.getElementById('mytext');//控制Hello, world
+        mytext.style.textAlign = textAlign.value;//mytext.屬性.textAlign=textAlign.屬性
+    }
+
+</script>
+<div id="mytext" style="text-align: center;">Hello, world</div>
+<hr>
+<select onchange="changeAlign()" id='textAlign'>
+    <option value='left'>Left</option>
+    <option value='center'>Center</option>
+    <option value='right'>Right</option>
+</select>

@@ -1,0 +1,15 @@
+<script src='bradutils.js'></script>
+<script>
+    //指定地區與性別
+    let newid1 = createTWIdByBoth('A',false);
+    console.log("area + gender :" + newid1);
+    //指定男生
+    let newid2 = createTWIdGender(true);
+    console.log("gender:" + newid2);
+    //指定地區
+    let newid3 = createTWIdByArea('E');
+    console.log("area:" + newid3);
+    //未指定
+    let newid4 = createTWId();
+    console.log("none:" + newid4);
+</script>

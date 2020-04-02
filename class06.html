@@ -1,0 +1,17 @@
+<script>
+    function docalc(){
+        let x = document.getElementById("x")
+        let xvalue = x.value;
+        let yvalue = document.getElementById("y").value;
+        xvalue = parseInt(xvalue);//parseint轉數字
+        yvalue = parseInt(yvalue);
+        let result = xvalue + yvalue;
+        //alert(result);
+        document.getElementById("here").innerHTML= result;
+    }
+</script>
+<input type="text" id="x" value="">
++
+<input type="text" id="y">
+<input type="button" value="=" onclick="docalc()">
+<span id="here"></span>

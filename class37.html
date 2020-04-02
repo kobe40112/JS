@@ -1,0 +1,22 @@
+<script>
+    //key => value;
+    let person = [];
+    person['name'] = 'David';
+    person['age'] = 18;
+    document.write(person['name'] + ':' +person['age'] + '<br>');//David : 18
+    person.push(123);person.push('III');
+    //尋訪person陣列
+    for(let key in person){
+        document.write(key + "==>" + person[key] + '<br>');//
+    }
+    document.write("<hr>");
+    person['eat'] = function(){
+        document.write(this.name +" eat something...");
+    };
+    //呼叫person.eat()
+    person.eat();
+    person['fxy'] = function(x,y){
+        return 2*x+y;
+    };
+    
+</script>

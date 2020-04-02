@@ -1,0 +1,38 @@
+<script>
+    //碼表
+    let i = 0 ; //second以秒計
+    let timerTask = null; //null空值
+    let isRunning = false;
+    //開始
+    function start(){
+
+        if(isRunning) return;//如果狀態是false直接回傳
+        isRunning = true;//如果狀態是true跑下方程式內容
+        timerTask =setInterval( doCounter,100);
+        //setInterval() 方法可按照指定的周期（以毫秒計）來調用函數或計算表達式。
+        document.getElementById('start').disabled = true;
+        // disabled 屬性，用來禁用該按鈕的功能
+    }
+    function doCounter(){
+        document.getElementById('counter').innerHTML = ++i;
+    }
+    //暫停
+    function pause(){
+        if(timerTask != null){
+            clearInterval(timerTask);
+        }
+        isRunning = false;
+        document.getElementById('start').disabled = false;
+    }
+    //歸零
+    function zero(){
+        i = 0;
+        document.getElementById('counter').innerHTML = i;
+    }
+
+</script>
+<input type="button" value="Start"  id="start" onclick="start()"/>
+<input type="button" value="Pause" onclick="pause()" />
+<input type="button" value="Zero" onclick="zero()" />
+<hr>
+<div id='counter'>0</div>

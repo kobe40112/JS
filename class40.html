@@ -1,0 +1,65 @@
+<script>
+//用javascript寫html
+//DOM 架構
+let body = document.createElement('body');//建立元素.createElement('物件')
+document.body = body;
+
+let header = document.createElement('h1');//建立元素.createElement('物件')
+//h1.innerHTML = 'David Big Company';
+let h1text = document.createTextNode('David Big Company');////建立文字截點.createTextNode('字串')
+//header ->裡建立 h1text
+header.appendChild(h1text);
+//body ->裡建立 header
+document.body.appendChild(header);
+
+let hr = document.createElement('hr');  //水平線
+//body ->裡建立 hr
+document.body.appendChild(hr);
+
+let ul = document.createElement("ul");
+//body ->裡建立 ul
+document.body.appendChild(ul);
+
+for(let i= 0;i<=4;i++){
+    let item = document.createElement("li");//建立元素.createElement('物件')
+    item.innerHTML = `第${i}項.....`;
+    ul.appendChild(item);
+    if(i == 2){
+    ritem = item;
+    }
+}
+
+ul.removeChild(ritem);
+
+let hr2 = hr.cloneNode();   //水平線
+document.body.appendChild(hr2);
+
+let ul2 = ul.cloneNode();
+document.body.appendChild(ul2);
+
+
+for(let i= 0;i<=4;i++){
+    let item = document.createElement("li");
+    item.innerHTML = `第${i}項.....`;
+    ul2.appendChild(item);
+}
+
+let hr3 = hr.cloneNode();   //水平線
+document.body.appendChild(hr3);
+
+let input = document.createElement("input"); //按鈕
+document.body.appendChild(input);
+input.type = 'button';
+input.value = 'Click';
+input.onclick = function(){
+    setTimeout(()=>{
+        hr.style.borderTopColor = '#ff0'//變黃色
+    },1*1000);//setInterval() 方法可按照指定的周期（以毫秒計）來調用函數或計算表達式。
+    setTimeout(()=>{
+        hr2.style.borderTopColor = '#00f'//變藍色
+    },2*1000);//setInterval() 方法可按照指定的周期（以毫秒計）來調用函數或計算表達式。
+    setTimeout(()=>{
+        hr3.style.borderTopColor = '#f00'//變紅色
+    },3*1000);//setInterval() 方法可按照指定的周期（以毫秒計）來調用函數或計算表達式。
+}
+</script>

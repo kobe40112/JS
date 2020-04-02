@@ -1,0 +1,30 @@
+<script>
+//物件導向
+ let person = {
+     name:'David',
+     age: 18,
+     //取得方法(通常如果是get這種函式我們都會期待拿到一個return回傳值)
+     getInfo:function(){
+         this.age++;
+         person.age++;
+         return this.name + ":" + this.age;
+     }
+ };
+
+ let peter = {
+     name:'peter',
+     age:20
+ }
+ let tony = {
+     name:'tony',
+     age :24
+ }
+
+ let jame = {
+     age :24
+ }
+ document.write(person.getInfo.call(peter) + "<br>");//peter:21
+ document.write("person age:" + person.age + "<br>");//person age:19
+ document.write(person.getInfo.call(tony) + "<br>");//tony:24
+ document.write(person.getInfo.call(jame) + "<br>");//undefined:24
+</script>

@@ -1,0 +1,30 @@
+<script>
+    function sayYa() {
+        document.write("Ya!<br>");
+    }
+    function sayYaV2(name = 'III') {
+        document.write(`Ya!${name}<br>`);
+    }
+    function sayYaV3(names){
+        if(names instanceof Array){
+            for(let i in names){
+                document.write(`Ya! ${names[i]}<br>`)
+            }
+        }
+    }
+                        //前置詞   ,不定各數
+        function sayYaV4(welcome,...names){
+        //document.write(typeof names + ":" + Array.isArray(names));
+        for(let name of names){
+            document.write(`${welcome}! ${name}<br>`);
+        }
+    }
+    sayYa();//YA!
+    sayYa();//YA!
+    sayYaV2('David');//YA! David
+    sayYaV2();//YA! III
+    sayYaV3(['David','Kobe','Kris','Andy']);//YA!David YA!Kobe YA!Kris YA!Andy
+    
+    document.write("<hr>");
+    sayYaV4('Hello','John','Mary','Eric');//Hello John Hello Mary Hello Eric
+</script>

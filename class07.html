@@ -1,0 +1,39 @@
+<script>
+    function docalc(){
+        let op = document.getElementById("op");
+
+        console.log(op.selectedIndex);
+        let xvalue =parseInt(document.getElementById("x").value);
+        let yvalue =parseInt(document.getElementById("y").value);
+        let result = '';
+        if(op.selectedIndex == 0){
+            result = xvalue + yvalue;
+        }else if(op.selectedIndex == 1){
+            result = xvalue - yvalue;
+        }else if(op.selectedIndex == 2){
+            result = xvalue * yvalue;
+        }else if(op.selectedIndex == 3){
+            let r1 = parseInt(xvalue / yvalue);
+            let r2 = xvalue % yvalue;
+            result = `${r1} ........${r2}`;
+        }else{
+
+        }
+        // let xvalue = parseInt(document.getElementById("x").value);
+        // let yvalue = parseInt(document.getElementById("y").value);
+        // let r1 = parseInt(xvalue/yvalue);
+        // let r2 = xvalue % yvalue;
+
+        document.getElementById("here").innerHTML= result
+    }
+</script>
+<input type="text" id="x">
+<select id="op">
+    <option>+</option>
+    <option>-</option>
+    <option>x</option>
+    <option>/</option>
+</select>
+<input type="text" id="y">
+<input type="button" value="=" onclick="docalc()">
+<span id="here"></span>

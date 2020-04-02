@@ -1,0 +1,72 @@
+<canvas id="canvas" width="480 " height="320"
+    style="border:1px solid black;"></canvas>
+<script>
+    let ctx = canvas.getContext('2d');
+    //載入圖片
+    let bg = new Image();
+    bg.src = 'bg.jpg';
+    let ball1 = new Image();
+    let ball2 = new Image();
+    let ball3 = new Image();
+    ball1.src = "ball1.png";ball2.src = "ball2.png"; ball3.src = "ball3.png";
+    let ballW, ballH;
+    let ballImg = [ball1,ball2,ball3];
+    let balls = []; //element is-a ballObj
+    let ballObj = function(){
+        this.x = 0;
+        this.y = 0;
+        this.dx = 8;
+        this.dy = 8;
+        this.img = 0;
+    }
+    bg.onload = function(){
+        ctx.drawImage(bg, 0, 0);
+    }
+    ball1.onload = function(){
+        ballW = ball1.width,ballH = ball1.height;
+    }
+
+    //如何刷螢幕
+    function refreshView(){
+        ctx.drawImage(bg, 0, 0);
+        for(let ball of balls){
+            ctx.drawImage(ballImg[ball.img], ball.x, ball.y);
+        }
+    }
+    setInterval(refreshView, 16);   //60fps
+
+    canvas.onmousedown = function(e){
+        let ball = new ballObj();
+        ball.x = e.offsetX -ballW/2;
+        ball.y = e.offsetY -ballH/2;
+        ball.dx =Math.floor(Math.random()*17-8);
+        ball.dy =Math.floor(Math.random()*17-8);
+        ball.img = Math.floor(Math.random()*3);
+        balls.push(ball);
+    }
+
+    //球移動
+    function moveBall(ball){
+        if(ball.x <0 || ball.x + ballW> canvas.width){ //x撞牆壁
+            ball.dx *= -1;
+        }
+        if(ball.y <0 || ball.y +ballH>canvas.height){    //y撞牆壁
+            ball.dy *= -1;
+        }
+        ball.x += ball.dx;
+        ball.y += ball.dy;
+    }
+
+    function go(){
+        for(let ball of balls){
+            moveBall(ball);
+        }
+    }
+    setInterval(go, 30); //define => unit time =0.03s
+
+
+    //鍵盤觸發
+    document.onkeydown = function(e){
+        console.log(e.keyCode);
+    };
+</script>

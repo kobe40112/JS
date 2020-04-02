@@ -1,0 +1,21 @@
+<script>
+let name = 'Davidluo';
+document.write(name.charAt(3) + '<br>');
+//charAt()該字符串的索引從零開始 //i
+document.write(name.substr(1) + '<br>');
+//substr()下標開始的指定數目的字符//avid luo
+document.write(name.substring(1,4) + '<br>');
+//substring() 方法用於提取字符串中介於兩個指定下標之間的字符。 //avi
+document.write(name.slice(1,4) + '<br>');
+//slice() 方法可提取字符串的某個部分 //avi
+
+document.write("<hr>");
+
+document.write("name:" + name + '<br>');
+let name1 = name.substring(1,4);
+document.write("name:" + name + '<br>');
+let name2 = name.slice(1,4);
+document.write("name:" +name + '<br>');//name David luo
+document.write("name1:" +name1 + '<br>');//name1 avi
+document.write("name2:" +name2 + '<br>');//name2 avi
+</script>

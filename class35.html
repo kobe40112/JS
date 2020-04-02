@@ -1,0 +1,60 @@
+<script>
+    //物件導向
+    let bike = new Object();
+    document.write(typeof bike + "<br>");//object
+    bike.speed = 0;
+    document.write(typeof bike +"<br>");//object
+    bike.upSpeed = function(){
+        this.speed = this.speed<1 ? 1 : this.speed*1.2; //加速度
+    };
+    bike.downSpeed = function(){
+        this.speed = this.speed<1 ? 0 :this.speed*0.5; //減速度
+    };
+    bike.upSpeed(); //1
+    bike.upSpeed(); //1.2
+    bike.upSpeed(); //1.44
+    document.write(bike.speed + "<br>");//1.44
+    bike.downSpeed();
+    bike.downSpeed();
+    bike.downSpeed();
+    bike.downSpeed();
+    document.write(bike.speed + "<hr>");//0
+    //let scooter = {} 一個大括號等於一個物件
+    //scooter has-a
+    let scooter = {
+        speed: 0,
+        gear:1,
+        upSpeed : function(){
+            this.speed = this.speed<1 ? 1 : this.speed*1.2;
+        },
+        downSpeed : function(){
+            this.speed = this.speed<1 ? 0 :this.speed*0.5;
+        }
+    };
+    scooter.upSpeed();scooter.upSpeed();scooter.upSpeed();
+    document.write(scooter.speed + "<br>");//1.44
+    scooter.downSpeed();scooter.downSpeed();scooter.downSpeed();
+    document.write(scooter.speed + "<hr>");//0
+
+
+    //bike.upSpeed(); 用陣列方式表式
+    document.write(bike.speed + "<br>");//0
+    bike['upSpeed']();//一個方法
+    document.write(bike.speed + "<br>");//1
+    let method = 'upSpeed';//如果是一個陣列，那裡面的值有沒有可能是一個變數
+    bike[method]();
+    document.write(bike.speed + "<hr>");//1.2
+
+
+    //尋訪陣列所有元素for(.... in ...)
+    for(let name in bike){
+        document.write(name + "==>" + bike[name] + "<br>");
+    }
+    document.write("<hr>")
+    //window 
+    for(let name in document){
+        document.write(name + "==>" + document[name] + "<br>");
+    }
+
+        
+</script>

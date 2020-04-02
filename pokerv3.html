@@ -1,0 +1,50 @@
+<script>
+    //洗牌
+    let poker = [];
+    for (let i = 0; i < 52; i++)poker[i] = i;
+    for (let j = poker.length - 1; j > 0; j--) {
+        let rand = parseInt(Math.random() * (j + 1));
+        [poker[j], poker[rand]] = [poker[rand], poker[j]];
+    }
+    //驗算
+    // for (let value of poker) {
+    //     document.write(value + "<br>");
+    // }
+    // document.write("<hr>");
+    //發牌
+    let players = [[], [], [], []];
+    for (let k = 0; k < poker.length; k++) {
+        players[k % 4].push(poker[k]);
+        //players[k%4][parseInt(k/4)] = poer[k];
+    }
+
+    //攤牌
+
+
+    // for(let card of players[0]){
+    //     document.write(card + "<br>");
+    // }
+</script>
+<table border="1"style="border-collapse: collapse;" width=100%>
+    <script>
+        let suits = ['&spades;','&hearts;','&diams;','&clubs;'];
+        let nums = ['A',2,3,4,5,6,7,8,9,10,'J','Q','K'];
+        for (let player of players) {
+            player.sort(function(a,b){return a-b;});
+            document.write("<tr>");
+            for (let card of player) {
+                let suit = Math.floor(card / 13);
+                let num = card % 13;
+
+                if(suit == 1 || suit == 2){
+                    document.write("<td style='color:red'>");
+                }else{
+                    document.write("<td style='color:black'>");
+                }
+                document.write(`${suits[suit]}${nums[num]}</td>`)
+            }
+            document.write("</tr>");
+        }
+
+    </script>
+</table>

@@ -1,0 +1,90 @@
+<h1 id='header'></h1>
+<hr>
+<input id='clear'>
+<input id="left">
+<input id="right">
+<hr>
+<!-- canvas畫布 -->
+<canvas id="canvas" width="480" height="320"
+ style="border:1px solid black"></canvas>
+ <script>
+    header.innerHTML = 'David Big Company';
+    //清除按鈕
+    clear.type='button';clear.value='Clear';
+    //觸發事件:清除畫面
+    clear.onclick = function(){
+        //清除畫面
+        ctx.clearRect(0,0,480,320);
+    };
+    //getContext:取得context ， 取得context才能做畫
+    let ctx = canvas.getContext('2d');
+    //畫筆顏色
+    ctx.strokeStyle = 'rgb(0,0,255)';
+    //畫線(開始要畫線)
+    ctx.beginPath();
+    //原點
+    //ctx.moveTo(0,0);
+    /*
+    ctx.lineTo(200,320);
+    ctx.lineTo(300,100);
+    ctx.lineTo(200,70);
+    ctx.lineTo(0,0);
+    ctx.stroke();
+    */
+    //畫筆預設值
+    let isDrag = false;
+    //滑鼠按下onmousedown
+    canvas.onmousedown = function(event){
+        //按下啟動畫筆
+        isDrag = true;
+        //自訂義名稱.offsetX(屬性x)+自訂義名稱.offsetY(屬性y)
+        console.log("down: " + event.offsetX + "x" +event.offsetY);
+        ctx.moveTo(event.offsetX,event.offsetY);
+    };
+    //滑鼠放開onmouseup
+    canvas.onmouseup = function(event){
+        //放開關閉畫筆
+        isDrag = false;
+        //自訂義名稱.offsetX(屬性x)+自訂義名稱.offsetY(屬性y)
+        console.log("up: "+ + event.offsetX + "x" +event.offsetY); 
+    }
+    //滑鼠移動onmousemove
+    canvas.onmousemove = function(event){
+        //偵測
+        if(!isDrag)return;
+        //自訂義名稱.offsetX(屬性x)+自訂義名稱.offsetY(屬性y)
+        console.log("move: "+ + event.offsetX + "x" +event.offsetY);
+        ctx.lineTo(event.offsetX,event.offsetY);
+        //筆畫跟著畫筆滑動(即時畫出)
+        ctx.stroke();
+    }
+    //物件導向
+    let ball = new Image();
+    //球的位置
+    let ballX = 200, ballY = 200;
+    ball.src ="s1.png";
+    //如果載入成功時 = 做這件事
+    ball.onload = function(){
+        //畫影像出來
+        ctx.drawImage(ball,ballX,ballY);
+    }
+    left.type = 'button';left.value='<-';
+    left.onclick = function(){
+        //往左
+        ballX-=4;
+        //要畫下一格前把螢幕給清除
+        ctx.clearRect(0,0,480,320);
+        ctx.drawImage(ball,ballX,ballY);
+        
+    };
+    right.type = 'button';right.value='->';
+
+    right.onclick = function(){
+        //往右
+        ballX+=4;
+        //要畫下一格前把螢幕給清除
+        ctx.clearRect(0,0,480,320);
+        ctx.drawImage(ball,ballX,ballY);
+        
+    };
+ </script>

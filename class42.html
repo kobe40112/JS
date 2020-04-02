@@ -1,0 +1,37 @@
+<script>
+    let body = document.createElement('body');
+    document.body = body;
+
+    let header = document.createElement('h1');
+    //h1.innerHTML = 'David Big Company';
+    let h1text = document.createTextNode('九九乘法');
+    header.appendChild(h1text);
+
+    document.body.appendChild(header);
+
+    let hr = document.createElement('hr');
+    document.body.appendChild(hr);
+    let table = document.createElement('table');
+    body.appendChild(table);
+    //table.boder = '1';table.width = '100%';
+    //setAttribute("屬性名稱","字串");
+    table.setAttribute("border","1");
+    //setAttribute("屬性名稱","字串");
+    table.setAttribute("width","100%");
+    //有2欄
+    for(let k=0;k<2;k++){
+        let tr = document.createElement('tr');
+        table.appendChild(tr);
+        //有4列
+        for(let j=2; j<=5 ;j++){
+            let td = document.createElement("td");
+            //td在tr下面 所以tr寫前面
+            tr.appendChild(td);
+            let newj = j+k*4;
+            for(let i=1;i<=9;i++){
+                td.innerHTML +=`${newj}x${i}=${newj*i}<br>`;
+            }
+        }
+    }
+
+</script>
