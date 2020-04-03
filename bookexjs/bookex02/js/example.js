@@ -7,10 +7,10 @@ let welocome = greeting + name + message ;
 
 //建立變數儲存名牌資訊
 let sign = 'Montague House';
-let tiles = sign.length;
-let subTotal = tiles * 5;
-let shipping = 7;
-let grandTotal = subTotal + shipping;
+let tiles = sign.length;//14
+let subTotal = tiles * 5;//70
+let shipping = 7;//7
+let grandTotal = subTotal + shipping;//77
 
 //取得具有id屬性值為greeting元件
 let el = document.getElementById('greeting');
