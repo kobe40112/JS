@@ -1,0 +1,18 @@
+假(falsy)值會被視為false。
+
+假值                        說明
+let highScore = false;      傳統布林值false
+let highScore = 0;          數字0
+let highScore = '';         空白值
+let highScore = 10/'score'; NaN(不是一個數字)
+let highScore;              一個未被指定值的變數
+
+真(truthy)值會被視為ture。
+真值                        說明
+let highScore = true;       傳統布林值true
+let highScore = 1;          除了0之外的數字
+let highScore = 'carrot';   有內容的字串
+let highScore = 10/5;       數字計算
+let highScore = true;       'true'字串
+let highScore = '0';        '0'字串
+let highScore = 'false';    'false'字串
