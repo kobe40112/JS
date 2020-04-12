@@ -1,0 +1,16 @@
+全域物件 : DATE物件(和TIME)
+
+方法
+getDate()           setDate()          回傳/設定月份日期(1-31) 
+getDay()                               回傳當週的日次(0-6) 
+getFullYear()       setFullYear()      回傳/設定年份(4位數)
+getHour()           setHour()          回傳/設定小時(0-23)
+getMilliseconds()   setMilliseconds()  回傳/設定毫秒(0-999) 
+getMinutes()        setMinutes()       回傳/設定分鐘(0-59) 
+getMonth()          setMonth()         回傳/設定月份(0-11) 
+getSeconds()        setSeconds()       回傳/設定秒數(0-59) 
+getTime()           setTime()          回傳/設定從西元1970年1月1日0點0分0秒至物件時間值的毫秒數，負數則表示在此之前的日期
+getTimezoneOffset()                    回傳本機時間與UTC時間之間的差異分鐘數
+toDateString()                         回傳具可讀性的日期字串
+toTimeString()                         回傳具可讀性的時間字串
+toString()                             回傳日期時間的字串
