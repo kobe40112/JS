@@ -1,0 +1,43 @@
+1.存取元件
+
+1-1選取一個標籤元件節點
+getElementById()利用元件id屬性值(屬性值在頁面中具有唯一性)
+
+querySelector()利用CSS選擇器，回傳第一個符合條件的元件
+
+1-2選取多個標籤元件節點
+getElementsByClassName()選取具有指定class屬性值得所有元件
+
+getElementsByTagName()選取具有指定標簽名稱的所有元件
+
+querySeletorAll()利用CSS選擇器選取所有符合條件的元件
+
+2.操作這些元件
+
+2-1存取/變更文字節點
+nodeValue 此特性可允許你儲存或更新一個文字節點的內容
+
+2-2操作HTML文件內容
+
+innerHTML 特性可允許存取子元件和其文字內容
+
+textContent 此特性允許只存取文字內容
+
+2-3方法
+createElement()
+createTextNode()
+appendChild()/removeChild()
+這些方法稱為DOM控制操作
+
+3.存取或變更屬性值
+
+3-1可以用以操作屬性的特性和方法
+
+className/id 可允許你取得或變更class 和 id 的屬性值
+
+3-2方法
+
+hasAttribute()    可檢查一個屬性是否存在
+getAttribute()    可以取得屬性值
+setAttribute()    可以變更或設定屬性
+removeAttribute() 可移除一項屬性
