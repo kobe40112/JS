@@ -1,43 +1,43 @@
 多樣化的是事件類型
 
 介面(UI)事件
-load        
-unload      
-error       
-resize       
-scrool      
+load       頁面內容載入完成 
+unload     頁面離開卸載(通常因為新的頁面被要求載入) 
+error      瀏覽器遭遇javaScript錯誤，或所要求的動作或元件不存在 
+resize     瀏覽器視窗調整尺寸大小  
+scrool     瀏覽器頁面捲軸上下拉動 
 
 鍵盤事件
-keydown
-keyup
-keypress
+keydown    使用者下壓鍵盤按鍵(當按鍵釋放後可再重複發生)
+keyup      使用者釋放鍵盤按鍵
+keypress   使用者按下壓鍵盤按鍵輸入字元(當按鍵釋放後可再重複發生)
 
 滑鼠事件
-click 
-db click
-mousedown
-mouseup
-mousemove
-mouseover
-mouseout
+click      使用者在相同的元件上按下並釋放滑鼠按鈕
+db click   使用者在相同的元件上連續兩次按下並釋放滑鼠按鈕
+mousedown  使用者在元件上按下滑鼠按鈕
+mouseup    使用者在元件上釋放滑鼠按鈕
+mousemove  使用者移動滑鼠(非在觸控螢幕上)
+mouseover  使用者移動滑鼠經過元件(非在觸控螢幕上)
+mouseout   使用者移動滑鼠離開元件(非在觸控螢幕上)
 
 聚集事件
-focus/focusin
-blur/focusout
+focus/focusin 元件取得焦點
+blur/focusout 元件失去焦點
 
 表單事件
-input
-change
-submit
-reset
-cut
-copy
-paste
-select
+input       在<input>或<textarea>中的值被變更(ie9+)或其他元件具有contenteditable屬性 
+change      再下拉式選單、多選核取框、或單選按鈕的值被變更(ie9+)     
+submit      使用者送出表單(使用按鈕)
+reset       使用者點擊表單的重置按鈕(目前較少使用)
+cut         使用者字表單欄位中剪下內容
+copy        使用者字表單欄位中複製內容
+paste       使用者貼上內容至表單欄位中
+select      使用者於表單欄位中選取文字
 
 變動事件
-DOMSubtreeModified
-DOMNodeInserted
-DOMNodeRemoved
-DOMNodeInsertedIntoDocument
-DOMNodeRemovedFromDocument
+DOMSubtreeModified          頁面文件被變更
+DOMNodeInserted             節點被安插至另一個節點下，作為其直接的子節點
+DOMNodeRemoved              節點自另一個節點中移除
+DOMNodeInsertedIntoDocument 節點被安插至另一個節點下，作為其後代節點
+DOMNodeRemovedFromDocument  節點自另一個節點中移除，不再作為其後代節點
