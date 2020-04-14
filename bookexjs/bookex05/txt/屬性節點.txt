@@ -1,0 +1,10 @@
+屬性節點
+
+方法
+getAttribute()    取得屬性值
+hasAttribute()    檢查是否該元件節點具備指定屬性 
+setAttribute()    設定屬性值
+removeAttribute() 自元件節點移除指定屬性 
+屬性
+className 取得或設定class屬性
+id        取得或設定id屬性

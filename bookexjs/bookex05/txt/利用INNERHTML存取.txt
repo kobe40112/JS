@@ -1,0 +1,12 @@
+利用INNERHTML存取/更新頁面的文字/標籤內容
+
+html: <li id="one"><em>fresh</em> figs</li>
+
+js: let elContent = document.getElementById('one').innerHTML;
+
+elContent變數會儲存下面字串
+'<em>fresh</em> figs'
+
+設定內容
+將elContent變數的內容(包含標籤元件)加入至清單的第一項目中
+document.getElementById('one').innerHTML = elContent; 

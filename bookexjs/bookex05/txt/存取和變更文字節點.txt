@@ -1,0 +1,22 @@
+存取和變更文字節點
+
+運用NODEVALUE存取和變更文字節點
+
+為了使用nodevalue，你必須位於文字節點上，而非文字的元件節點。
+
+ex:
+html: <li id='one'><em>fresh</em> figs</li>
+js:   document.getElementById('one').firstChild.nextSibling.nodevalue;  //回傳 figs
+
+利用TEXTCONTENT(和INNERTEXT)存取和變更文字
+ex:
+
+textContent 可允許你將容納元件裡(和它的子節點)的文字擷取或更新。
+html:<li id="one"><em>fresh</em> figs</li>
+js: document.getElementById('one').textContent;
+
+
+innertext 也可以達到上述效果 ，但是一般盡量避免使用，因為以下三項因素
+1.支援度
+2.遵循CSS規則
+3.效能
