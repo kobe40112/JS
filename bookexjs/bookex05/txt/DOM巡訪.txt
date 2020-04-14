@@ -2,11 +2,11 @@ DOM巡訪 book p208
 
 parentNode 子點 找 父點
 
-previousSibling  找前一個 或 後一個 兄弟點 ，如沒有前一個兄弟點 ; 那後一個兄弟點 就是節點
-nextSibling      找前一個 或 後一個 兄弟點 ，如沒有前一個兄弟點 ; 那後一個兄弟點 就是節點
+previousSibling  找前一個 兄弟點 ，如沒有前一個兄弟點 ; 那後一個兄弟點 就是節點
+nextSibling      找後一個 兄弟點 ，如沒有前一個兄弟點 ; 那後一個兄弟點 就是節點
 
-firstChild    從父點 可尋找目前節點的 第一個子節點 或 最後一個子節點  
-lastChild     從父點 可尋找目前節點的 第一個子節點 或 最後一個子節點
+firstChild    從父點 可尋找目前第一個子節點 
+lastChild     從父點 可尋找目前最後一個子節點
 
 
 空白節點 book p209
