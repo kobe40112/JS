@@ -1,0 +1,13 @@
+事件流程
+
+氣泡事件(Event Bubbling) (由內到外) 
+
+事件流程的影響(false)
+
+<a> -> <li> -> <ul> -> <body> -> <html> -> Document
+
+事件捕捉(Event Capturing) (由外到內) 
+
+事件流程的影響(true)
+
+Document -> <html> -> <body> -> <ul> -> <li> -> <a>
