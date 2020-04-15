@@ -1,0 +1,33 @@
+事件監聽器
+
+ex:
+
+element.addEventListener('event', functionName [, Boolean]);
+  元件                     事件        程式碼      事件流程
+
+ex1:
+
+function checkUsername() {
+    //檢查使用者名稱長度的程式碼
+}
+let el = document.getElementById('username');
+el.addEventListener('blur', checkUsername, false)
+
+
+於事件處理器和監聽器中使用需傳入參數的函式
+                    事件名稱   匿名函式開始
+el.addEventListener('blur',  function() {
+  checkUsername(5);
+}, false)
+
+支援舊版本 IE(利用事件監聽器向下相容IE8)
+
+if(el.addEventListener) {
+  el.addEventListener('blur', function() {
+    checkUsername(5);
+  }, false);
+}else{
+  el.addEventListener('onblur', function(){
+    checkUsername(5);
+  });
+}
