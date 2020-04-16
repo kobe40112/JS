@@ -1,0 +1,20 @@
+變更預設行為(book pt267)
+
+preventDefault()
+ex:
+if(event.preventDefault){
+    event.preventDefault();
+}else{
+    event.returnValue =false;
+}
+
+
+stopPropagation()
+ex:
+if(event.stopPropagation){
+    event.stopPropagation();
+}else{
+    event.cancelBubble = true;
+}
+
+同時使用兩者

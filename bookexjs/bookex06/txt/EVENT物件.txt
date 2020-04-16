@@ -1,0 +1,54 @@
+EVENT物件
+
+特性                IE5-8對應特性               說明
+target              sreElement            事件的目標元件(最具體互動的元件)
+type                type                  被啟動的事件類型
+cancelable          not supported         是否元件預設的行為可被取消
+
+方法                IE5-8對應特性               說明
+preventDefault()    returnValue           取消元件預設的行為(如果可被取消)
+stopPropagation()   cancelBubble          停止事件氣泡或事件捕捉進行
+
+不需傳遞參數的事件監聽器
+ex:
+
+function checkUsername(e){
+    let target = e.target;//取得事件的目標元件
+}
+let el = document.getElemenById('username');
+el.addEventListener('blur', checkUsername, false);
+
+
+需傳遞參數的事件監聽器
+ex:
+
+function checkUsername(e, minLength) {
+    let target = e.target; //取得事件的目標元件
+}
+
+let el = document.getElemenById('username');
+el.addEventListener('blur', function(e){
+    checkUsername(e, 5);
+}, false);
+
+EVENT物件向下相容 IE5-8 瀏覽器
+
+
+以下if條件判斷式會檢查event物件是否被傳遞至函式中。若物件為真，條件代表是若物件為不存在
+function checkUsername(e) {
+    if(!e) {
+        e = window.event;
+    }
+}
+
+取得特性值
+let target;
+target = e.target || e.srcElement;
+
+以函式取得事件的目標元件
+function getEventTarget(e) {
+    if(!e){
+        e = window.event;
+    }
+    return e.target || e.srcElement;
+}
