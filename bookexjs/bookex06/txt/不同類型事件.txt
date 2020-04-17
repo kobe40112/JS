@@ -1,0 +1,86 @@
+各種不同類型事件
+
+W3C DOM 事件
+DOM事件的技術規格由W3C制定管理(該組織同時也制訂其他數種技術規格，包含HTML、CSS、HTML5)
+
+
+HTML5 事件
+submit
+input
+change
+
+readystatechange
+DOMContentLoaded
+hashchange
+
+BOM事件
+touchstart
+touchend
+touchmove
+orientationchange
+
+使用者介面事件
+
+事件                觸發時機
+
+load           當網頁頁面完成載入後便會啟動
+
+unload         當網頁頁面進行卸載時便會啟動
+
+error          當瀏覽器發生javaScript錯誤，或所存取的元件不存在時便會啟動
+
+resize         當瀏覽器視窗被調整尺寸時便會啟動
+
+scroll         當使用者上下拉動捲軸時便會啟動
+
+FOCUS 與 BLUR 事件
+
+事件                觸發時機                                    事件流程
+
+focus       當元件取得焦點時，DOM元件節點的focus事件便會啟動       事件捕捉
+
+blur        當元件取得焦點時，DOM元件節點的blur事件便會啟動        事件捕捉
+
+focusin     與focus相同                                         事件氣泡、事件捕捉
+
+focusout    與blur相同                                          事件氣泡、事件捕捉
+
+MOUSE事件 book pt276
+
+事件                            觸發時機                                             
+
+click           當使用者按下滑鼠主要按鍵，便會啟動事件                                      
+
+dblclick        當使用者雙擊滑鼠主要按鍵，便會啟動事件
+
+mousedown       當使用者按下滑鼠任何按鍵，便會啟動事件
+
+mouseup         當使用者釋放滑鼠按鍵，便會啟動事件
+
+mouseover       當使用者將游標自元件之外移動至元件上，便會啟動事件
+
+mouseout        當游標自元件上移出至其他元件一在目前的元件之外或它的子元件外，便會啟動事件
+
+mousemove       當游標在元件上移動，便會啟動事件。此事件會反覆的被啟動。
+
+KEYBOARD事件
+
+事件                        觸發時機
+
+input           當<input>或<textarea>文字輸入元件的值有變更時，事件便會啟動
+
+keydown         當使用者按下鍵盤上的任何鍵，事件便會啟動
+
+keypress        當使用者敲擊鍵盤按鍵，並在螢幕上產生文字輸入時，事件便會啟動
+
+keyup           當使用者釋放鍵盤按鍵，事件便會啟動
+
+FROM 事件
+
+事件                    觸發時機
+
+submit         當表單被送出時，submit事件便會啟動
+
+change         當表單上的元件內容狀態被變更時，便會啟動事件
+
+input          <input>事件，如上頁內容，經常與<input>和<textarea>元件一起使用
