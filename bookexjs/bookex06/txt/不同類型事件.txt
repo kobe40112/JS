@@ -89,13 +89,13 @@ MUTATION 事件和觀察器
 
 事件                                            觸發時機
 
-DOMNodeInserted
+DOMNodeInserted                     當節點被插入至DOM樹中，便會啟動事件
 
-DOMNodeRemoved
+DOMNodeRemoved                      當節點自DOM樹中移除，便會啟動事件
 
-DOMSubtreeModeified
+DOMSubtreeModeified                 當DOM結構變更時，便會啟動事件
 
-DOMNodeInsertedIntDocument
+DOMNodeInsertedIntDocument          當節點被插入至DOM樹中，作為另一個已存在節點的子孫節點時，便會啟動事件
 
-DOMNodeRemovedFromDocument
+DOMNodeRemovedFromDocument          當節點自DOM樹中移除一個已存在節點的子孫節點時，便會啟動事件
 
