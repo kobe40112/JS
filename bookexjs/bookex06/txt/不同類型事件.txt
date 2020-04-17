@@ -99,3 +99,12 @@ DOMNodeInsertedIntDocument          當節點被插入至DOM樹中，作為另�
 
 DOMNodeRemovedFromDocument          當節點自DOM樹中移除一個已存在節點的子孫節點時，便會啟動事件
 
+HTML5 事件
+
+事件                                            觸發時機
+
+DOMContertLoaded               當DOM樹被建立時，便會啟動事件     
+
+hashchange                     當URL的hash結果變更，便會啟動事件    
+
+beforeunload                   當頁面內容開始進行卸載之前，window物件上的此事件便會啟動事件     
