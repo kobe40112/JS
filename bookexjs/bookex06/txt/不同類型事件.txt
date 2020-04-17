@@ -84,3 +84,18 @@ submit         當表單被送出時，submit事件便會啟動
 change         當表單上的元件內容狀態被變更時，便會啟動事件
 
 input          <input>事件，如上頁內容，經常與<input>和<textarea>元件一起使用
+
+MUTATION 事件和觀察器
+
+事件                                            觸發時機
+
+DOMNodeInserted
+
+DOMNodeRemoved
+
+DOMSubtreeModeified
+
+DOMNodeInsertedIntDocument
+
+DOMNodeRemovedFromDocument
+
